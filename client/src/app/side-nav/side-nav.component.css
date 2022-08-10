@@ -1,16 +1,42 @@
-.example-container {
-  width: 500px;
+@import url('https://css.gg/menu-right.css');
+
+.side-nav-container {
+  width: 100%;
   height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.example-sidenav-content {
+.side-nav-button-container {
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
 }
 
-.example-sidenav {
+.side-nav-button {
+  border: none;
+  background-color: transparent;
+  margin: 30px 20px 0px auto;
+}
+
+.side-nav-menu {
   padding: 20px;
+}
+
+.mat-drawer-container {
+  background-color: transparent !important;
+}
+
+.gg-menu-right, .gg-menu-right::before, .gg-menu-right::after {
+  height: 4px;
+}
+
+.gg-menu-right {
+  width: 28px;
+}
+
+.gg-menu-right::before {
+  top: -8px;
+  width: 15px;
+}
+
+.gg-menu-right::after {
+  top: 8px;
+  width: 19px;
 }
