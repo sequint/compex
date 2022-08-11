@@ -1,5 +1,9 @@
 @import url('https://css.gg/menu-right.css');
 
+.hide-element {
+  display: none;
+}
+
 .side-nav-button-container {
   display: flex;
 }
