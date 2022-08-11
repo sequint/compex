@@ -2,13 +2,12 @@
   <div class={{getMenuClass()}}>
     <div class="side-menu">
       <ul>
-        <li>home</li>
-        <li>marketplace</li>
+        <li *ngFor="let item of menuItems">{{item}}</li>
       </ul>
     </div>
   </div>
 
-  <button class="side-nav-button" type="button" (click)="toggleMenuOpen()">
+  <button class="side-nav-button" (click)="toggleMenuOpen()">
     <i class="gg-menu-right"></i>
   </button>
 </div>

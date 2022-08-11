@@ -15,7 +15,8 @@ export class SideNavComponent {
   private menuOpen: boolean;
   private openClass: string;
   private closedClass: string;
-  private menuItems: string[];
+  
+  menuItems: string[];
 
   constructor() {
     this.menuOpen = false;
