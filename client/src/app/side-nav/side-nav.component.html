@@ -1,6 +1,14 @@
 <div class="side-nav-button-container">
+  <div class={{getMenuClass()}}>
+    <div class="side-menu">
+      <ul>
+        <li>home</li>
+        <li>marketplace</li>
+      </ul>
+    </div>
+  </div>
+
   <button class="side-nav-button" type="button" (click)="toggleMenuOpen()">
     <i class="gg-menu-right"></i>
   </button>
-  <h2 class={{getMenuClass()}}>Hello there</h2>
 </div>

@@ -4,6 +4,14 @@
   display: none;
 }
 
+.side-menu-container {
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  background-color: white;
+}
+
 .side-nav-button-container {
   display: flex;
 }
@@ -12,6 +20,9 @@
   border: none;
   background-color: transparent;
   margin: 30px 20px 0px auto;
+  z-index: 1;
+  position: absolute;
+  right: 0;
 }
 
 .gg-menu-right, .gg-menu-right::before, .gg-menu-right::after {

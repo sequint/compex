@@ -15,11 +15,13 @@ export class SideNavComponent {
   private menuOpen: boolean;
   private openClass: string;
   private closedClass: string;
+  private menuItems: string[];
 
   constructor() {
     this.menuOpen = false;
-    this.openClass = '';
+    this.openClass = 'side-menu-container';
     this.closedClass = 'hide-element';
+    this.menuItems = ['home', 'marketplace'];
   }
 
   toggleMenuOpen = () => this.menuOpen = !this.menuOpen;
