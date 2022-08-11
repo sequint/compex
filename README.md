@@ -1,6 +1,6 @@
 # compex
 
-<img src="./src/assets/images/angular.png" alt="angular-logo" width="120px" height="120px"/> Built on the MEAN Stack
+<img src="/src/assets/images/angular.png" alt="angular-logo" width="120px" height="120px"/> Built on the MEAN Stack
 
 ## Overview
 
