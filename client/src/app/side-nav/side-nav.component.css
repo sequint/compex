@@ -6,6 +6,10 @@ ul {
   margin-top: 0px;
 }
 
+li {
+  margin: 10px 20px;
+}
+
 .hide-element {
   display: none;
 }
@@ -58,6 +62,6 @@ ul {
 }
 
 .gg-close-o {
-  margin: 0px 25px 10px auto;
+  margin: 0px 25px 30px auto;
   transform: scale(var(--ggs, 1.5));
 }
