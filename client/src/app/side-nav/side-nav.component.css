@@ -10,8 +10,9 @@ li {
   margin: 10px 20px;
 }
 
-.hide-element {
-  display: none;
+.show-menu-container {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .side-menu-container {
@@ -20,14 +21,27 @@ li {
   z-index: 2;
   position: absolute;
   background-color: rgba(128, 128, 128, 0.322);
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+.show-side-menu {
+  right: 0 !important;
+  visibility: visible !important;
+  transition: all .6s ease-in-out, visibility 0s .3s;
 }
 
 .side-menu {
+  position: fixed;
   text-align: right;
   background: white;
   height: 100vh;
-  margin-left: 100px;
+  width: 270px;
   padding-top: 20px;
+  right: -250px;
+  transition: all .6s ease-in-out, visibility 0s .3s;
+  visibility: hidden;
 }
 
 .side-nav-button-container {

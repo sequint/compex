@@ -12,18 +12,23 @@ import { Component } from '@angular/core';
 
 export class SideNavComponent {
   private menuOpen: boolean;
-  private openClass: string;
-  private closedClass: string;
+  private openCntClass: string;
+  private closedCntClass: string;
+  private openMnClass: string;
+  private closedMnClass: string;
 
   menuItems: string[];
 
   constructor() {
     this.menuOpen = false;
-    this.openClass = 'side-menu-container';
-    this.closedClass = 'hide-element';
+    this.openCntClass = 'side-menu-container show-menu-container';
+    this.closedCntClass = 'side-menu-container';
+    this.openMnClass = 'side-menu show-side-menu';
+    this.closedMnClass = 'side-menu';
     this.menuItems = ['home', 'marketplace'];
   }
 
   toggleMenuOpen = () => this.menuOpen = !this.menuOpen;
-  getMenuClass = () => this.menuOpen ? this.openClass : this.closedClass;
+  getMenuContainerClass = () => this.menuOpen ? this.openCntClass : this.closedCntClass;
+  getMenuClass = () => this.menuOpen ? this.openMnClass : this.closedMnClass;
 }
