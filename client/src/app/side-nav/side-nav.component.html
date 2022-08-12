@@ -1,6 +1,7 @@
 <div class="side-nav-button-container">
   <div class={{getMenuClass()}}>
-    <div class="side-menu">
+    <div class="side-menu" (click)="toggleMenuOpen()">
+      <i class="gg-close-o"></i>
       <ul>
         <li *ngFor="let item of menuItems">{{item}}</li>
       </ul>

@@ -1,4 +1,10 @@
 @import url('https://css.gg/menu-right.css');
+@import url('https://css.gg/close-o.css');
+
+ul {
+  list-style: none;
+  margin-top: 0px;
+}
 
 .hide-element {
   display: none;
@@ -9,7 +15,15 @@
   width: 100%;
   z-index: 2;
   position: absolute;
-  background-color: white;
+  background-color: rgba(128, 128, 128, 0.322);
+}
+
+.side-menu {
+  text-align: right;
+  background: white;
+  height: 100vh;
+  margin-left: 100px;
+  padding-top: 20px;
 }
 
 .side-nav-button-container {
@@ -41,4 +55,9 @@
 .gg-menu-right::after {
   top: 8px;
   width: 19px;
+}
+
+.gg-close-o {
+  margin: 0px 25px 10px auto;
+  transform: scale(var(--ggs, 1.5));
 }
