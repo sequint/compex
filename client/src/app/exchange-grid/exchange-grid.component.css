@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://css.gg/arrow-up.css');
 
 .ex-grid {
   background-color: #CFD6EA;
@@ -32,4 +33,36 @@
   margin: 12px;
   border-radius: 20px;
   box-shadow: rgb(0 0 0 / 25%) 0px 8px 24px;
+}
+
+.item-icon {
+  height: 40px;
+  margin-top: 10px;
+}
+
+.item-name {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.item-ex-val {
+  font-size: 15px;
+  color: #423629;
+  margin: 0px;
+}
+
+.gg-arrow-up {
+  display: inline-flex;
+  height: 30px;
+  vertical-align: middle;
+  color: green;
+}
+
+.change-perc {
+  display: inline-flex;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  font-size: 20px;
+  color: green;
 }
