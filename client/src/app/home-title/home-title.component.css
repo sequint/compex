@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap');
+
 .title-container {
   background-color: #CFD6EA;
   height: 600px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.large-logo {
+  font-family: 'DynaPuff', cursive;
+  font-size: 150px;
+  margin: 0px;
+  color: #4F5D2F;
+}
+
+@media screen and (max-width: 600px) {
+  .large-logo {
+    font-size: 100px;
+  }
 }
