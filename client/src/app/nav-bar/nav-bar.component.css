@@ -1,5 +1,6 @@
 @import url('https://css.gg/menu-right.css');
 @import url('https://css.gg/close-o.css');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
 
 ul {
   list-style: none;
@@ -82,11 +83,21 @@ li {
 
 .top-nav-menu-item-container {
   text-align: center;
-  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #CFD6EA;
 }
 
 .top-nav-menu-item {
   display: inline-flex;
+  color: #423629;
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 30px;
+}
+
+.top-nav-menu-item:hover {
+  cursor: pointer;
+  color: #7D7E75;
 }
 
 @media screen and (min-width: 1025px) {
