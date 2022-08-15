@@ -4,6 +4,7 @@
   background-color: #CFD6EA;
   text-align: center;
   padding-bottom: 50px;
+  width: 100%;
 }
 
 .trending-title {
@@ -18,6 +19,9 @@
   flex-wrap: wrap;
   padding: 20px 20px;
   justify-content: space-around;
+  max-width: 696px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .ex-item {
