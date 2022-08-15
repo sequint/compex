@@ -44,7 +44,7 @@ li {
   visibility: hidden;
 }
 
-.side-nav-button-container {
+.side-nav-container {
   display: flex;
 }
 
@@ -87,4 +87,16 @@ li {
 
 .top-nav-menu-item {
   display: inline-flex;
+}
+
+@media screen and (min-width: 1025px) {
+  .side-nav-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .top-nav-container {
+    display: none;
+  }
 }

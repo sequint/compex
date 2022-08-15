@@ -1,5 +1,5 @@
 <!-- Mobile View -->
-<div class="side-nav-button-container">
+<div class="side-nav-container">
   <div class={{getMenuContainerClass()}}>
     <div class={{getMenuClass()}}>
       <i class="gg-close-o" (click)="toggleMenuOpen()"></i>
@@ -15,7 +15,7 @@
 </div>
 
 <!-- Desktop View -->
-<div>
+<div class="top-nav-container">
   <ul class="top-nav-menu-item-container">
     <li class="top-nav-menu-item"*ngFor="let item of menuItems">{{item}}</li>
   </ul>
