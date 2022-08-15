@@ -16,6 +16,8 @@
 .ex-item-container {
   display: flex;
   flex-wrap: wrap;
+  padding: 20px 20px;
+  justify-content: space-around;
 }
 
 .ex-item {
@@ -23,7 +25,7 @@
   background-color: white;
   height: 150px;
   width: 150px;
-  margin: 20px 22px 0px 22px;
+  margin: 12px;
   border-radius: 20px;
   box-shadow: rgb(0 0 0 / 25%) 0px 8px 24px;
 }
