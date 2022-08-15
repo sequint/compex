@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 /**
- * @title SideNav
+ * @title NavBar
  */
 @Component({
-    selector: 'side-nav',
-    templateUrl: 'side-nav.component.html',
-    styleUrls: ['side-nav.component.css'],
+    selector: 'nav-bar',
+    templateUrl: './nav-bar.component.html',
+    styleUrls: ['./nav-bar.component.css'],
   }
 )
 
-export class SideNavComponent {
+export class NavBarComponent {
   private menuOpen: boolean;
   private openCntClass: string;
   private closedCntClass: string;
