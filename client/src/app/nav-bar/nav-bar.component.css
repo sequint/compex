@@ -9,6 +9,8 @@ ul {
 
 li {
   margin: 10px 20px;
+  color: #423629;
+  font-family: 'Signika Negative', sans-serif;
 }
 
 .show-menu-container {
@@ -60,6 +62,7 @@ li {
 
 .gg-menu-right, .gg-menu-right::before, .gg-menu-right::after {
   height: 4px;
+  color: #423629;
 }
 
 .gg-menu-right {
@@ -79,6 +82,7 @@ li {
 .gg-close-o {
   margin: 0px 25px 30px auto;
   transform: scale(var(--ggs, 1.5));
+  color: #423629;
 }
 
 .top-nav-menu-item-container {
@@ -91,14 +95,16 @@ li {
 
 .top-nav-menu-item {
   display: inline-flex;
-  color: #423629;
-  font-family: 'Signika Negative', sans-serif;
   font-size: 30px;
 }
 
 .top-nav-menu-item:hover {
   cursor: pointer;
   color: #7D7E75;
+}
+
+.side-nav-menu-item {
+  font-size: 25px;
 }
 
 @media screen and (min-width: 1025px) {
