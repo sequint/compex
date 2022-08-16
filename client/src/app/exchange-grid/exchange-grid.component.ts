@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CompxItem } from 'src/interfaces/CompxItem';
+import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 
 /**
  * @title ExchangeGrid
@@ -15,13 +16,7 @@ export class ExchangeGridComponent {
   compxItems: CompxItem[];
 
   constructor() {
-    this.compxItems = [{
-      name: 'Banana Scraps',
-      icon: '../../assets/icons/banana.png',
-      value: 4.05,
-      valChange: 20.00,
-      arrowIcon: ''
-    }];
+    this.compxItems = fakeCompxItems;
 
     this.setArrowIcon();
   }
