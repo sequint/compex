@@ -16,13 +16,11 @@ export class ExchangeGridComponent {
   compxItems: CompxItem[];
 
   constructor() {
-    this.compxItems = fakeCompxItems;
+    this.compxItems = fakeCompxItems.map(item => {
+      if (item.valChange > 0) { item.arrowIcon = 'gg-arrow-up'};
+      if (item.valChange < 0) { item.arrowIcon = 'gg-arrow-down'};
 
-    // this.setArrowIcon();
-  }
-
-  setArrowIcon = () => {
-    if (this.compxItems[0].valChange > 0) { this.compxItems[0].arrowIcon = 'gg-arrow-up'}
-    else if (this.compxItems[0].valChange < 0) { this.compxItems[0].arrowIcon = 'gg-arrow-down'};
+      return item;
+    });
   }
 }
