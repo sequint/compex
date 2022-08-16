@@ -1,5 +1,9 @@
 <section class="ex-grid">
-  <h3 class="trending-title">Trending on compx...</h3>
+  <div class="search-bar-container">
+    <input type="text" placeholder="Search for compost items on compx" class="search-bar" />
+  </div>
+  
+  <h3 class="trending-title">Trending on compx</h3>
   <div class="ex-item-container">
     <div class="ex-item" *ngFor="let item of compxItems">
       <img src={{item.icon}} alt="banana" class="item-icon">
