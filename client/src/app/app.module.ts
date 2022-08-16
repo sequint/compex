@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeTitleComponent } from './home-title/home-title.component';
 import { ExchangeGridComponent } from './exchange-grid/exchange-grid.component';
+import { CompostDividerComponent } from './compost-divider/compost-divider.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ExchangeGridComponent } from './exchange-grid/exchange-grid.component';
     AppComponent,
     NavBarComponent,
     HomeTitleComponent,
-    ExchangeGridComponent
+    ExchangeGridComponent,
+    CompostDividerComponent
   ],
   imports: [
     BrowserModule,
