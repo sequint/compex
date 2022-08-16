@@ -1,15 +1,12 @@
 <section class="ex-grid">
   <h3 class="trending-title">Trending on compx...</h3>
   <div class="ex-item-container">
-    <div class="ex-item">
-      <img src={{getItemIcon()}} alt="banana" class="item-icon">
-      <h6 class="item-name">{{getItemName()}}</h6>
-      <p class="item-ex-val">${{getItemValue()}} per lb.</p>
+    <div class="ex-item" *ngFor="let item of compxItems">
+      <img src={{item.icon}} alt="banana" class="item-icon">
+      <h6 class="item-name">{{item.name}}</h6>
+      <p class="item-ex-val">${{item.value}} per lb.</p>
       <i class={{getArrowIcon()}}></i>
-      <p class="change-perc">{{getItemValChange()}}%</p>
+      <p class="change-perc">{{item.valChange}}%</p>
     </div>
-    <div class="ex-item"></div>
-    <div class="ex-item"></div>
-    <div class="ex-item"></div>
   </div>
 </section>
