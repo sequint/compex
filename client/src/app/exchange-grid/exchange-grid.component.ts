@@ -18,17 +18,11 @@ export class ExchangeGridComponent {
   constructor() {
     this.compxItems = fakeCompxItems;
 
-    this.setArrowIcon();
+    // this.setArrowIcon();
   }
 
   setArrowIcon = () => {
     if (this.compxItems[0].valChange > 0) { this.compxItems[0].arrowIcon = 'gg-arrow-up'}
     else if (this.compxItems[0].valChange < 0) { this.compxItems[0].arrowIcon = 'gg-arrow-down'};
   }
-
-  getItemName = () => this.compxItems[0].name;
-  getItemIcon = () => this.compxItems[0].icon;
-  getItemValue = () => this.compxItems[0].value;
-  getItemValChange = () => this.compxItems[0].valChange;
-  getArrowIcon = () => this.compxItems[0].arrowIcon;
 }
