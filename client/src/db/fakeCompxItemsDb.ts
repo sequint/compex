@@ -7,5 +7,12 @@ export const fakeCompxItems: CompxItem[] = [
     value: 4.05,
     valChange: 20.00,
     arrowIcon: ''
+  },
+  {
+    name: 'Coffee Grinds',
+    icon: '../../assets/icons/coffee-beans.png',
+    value: 7.25,
+    valChange: -12.00,
+    arrowIcon: ''
   }
 ];
