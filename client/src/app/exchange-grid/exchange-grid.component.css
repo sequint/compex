@@ -72,5 +72,12 @@
   margin-bottom: 0px;
   margin-top: 15px;
   font-size: 20px;
+}
+
+.positive-change {
   color: green;
+}
+
+.negative-change {
+  color: red;
 }

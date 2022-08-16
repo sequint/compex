@@ -17,8 +17,14 @@ export class ExchangeGridComponent {
 
   constructor() {
     this.compxItems = fakeCompxItems.map(item => {
-      if (item.valChange > 0) { item.arrowIcon = 'gg-arrow-up'};
-      if (item.valChange < 0) { item.arrowIcon = 'gg-arrow-down'};
+      if (item.valChange > 0) {
+        item.arrowIcon = 'gg-arrow-up';
+        item.changeColorClass += ' positive-change';
+      };
+      if (item.valChange < 0) {
+        item.arrowIcon = 'gg-arrow-down';
+        item.changeColorClass += ' negative-change';
+      };
 
       return item;
     });

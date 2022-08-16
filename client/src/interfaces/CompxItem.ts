@@ -4,5 +4,6 @@ export interface CompxItem {
     icon: string,
     value: number,
     valChange: number,
-    arrowIcon: string
+    arrowIcon: string,
+    changeColorClass: string
 }
