@@ -1,7 +1,14 @@
 .compost-pile-divider {
   background-color: #CFD6EA;
+  margin-top: -40px;
 }
 
 .compost-image {
   width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+  .compost-pile-divider {
+    margin-top: -150px;
+  }
 }
