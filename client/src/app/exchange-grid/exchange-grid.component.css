@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
 @import url('https://css.gg/arrow-up.css');
+@import url('https://css.gg/arrow-down.css');
 
 .ex-grid {
   background-color: #CFD6EA;
@@ -57,6 +58,13 @@
   height: 30px;
   vertical-align: middle;
   color: green;
+}
+
+.gg-arrow-down {
+  display: inline-flex;
+  height: 30px;
+  vertical-align: bottom;
+  color: red;
 }
 
 .change-perc {
