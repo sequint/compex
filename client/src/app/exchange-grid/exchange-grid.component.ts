@@ -15,6 +15,7 @@ import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 export class ExchangeGridComponent {
   private searchedItemsClass: string;
   private trendingItemsClass: string;
+  private tempItemsArray: CompxItem[];
   
   allItems: CompxItem[];
   trendingItems: CompxItem[];
@@ -24,6 +25,7 @@ export class ExchangeGridComponent {
     this.trendingItemsClass = '';
     this.allItems = this.mapItems();
     this.trendingItems = this.mapItems();
+    this.tempItemsArray = this.allItems;
   }
 
   private mapItems = () => {
@@ -45,10 +47,18 @@ export class ExchangeGridComponent {
   getTrendingItemsClass = () => this.trendingItemsClass;
 
   searchForItems = (event: any) => {
-    let lowerItemNames = this.allItems.map(item => item.name.toLowerCase());
     let lowerSearchValue = event.target.value.toLowerCase();
     console.log(lowerSearchValue);
 
+    if (lowerSearchValue.length > 0) {
+      this.searchedItemsClass = '';
+      this.trendingItemsClass = 'hide';
 
+      this.allItems = this.tempItemsArray.filter(item => item.name.toLowerCase() === lowerSearchValue);
+    }
+    else {
+      this.searchedItemsClass = 'hide';
+      this.trendingItemsClass = '';
+    }
   }
 }
