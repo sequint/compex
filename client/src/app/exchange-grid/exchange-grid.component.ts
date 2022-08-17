@@ -54,7 +54,9 @@ export class ExchangeGridComponent {
       this.searchedItemsClass = '';
       this.trendingItemsClass = 'hide';
 
-      this.allItems = this.tempItemsArray.filter(item => item.name.toLowerCase() === lowerSearchValue);
+      this.allItems = this.tempItemsArray.filter(item => {
+        return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
+      });
     }
     else {
       this.searchedItemsClass = 'hide';
