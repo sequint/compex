@@ -13,10 +13,19 @@ import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 )
 
 export class ExchangeGridComponent {
-  compxItems: CompxItem[];
+  private searchedItemsDisplay: string = '';
+  private trendingItemsDisplay: string = '';
+  
+  allItems: CompxItem[];
+  trendingItems: CompxItem[];
 
   constructor() {
-    this.compxItems = fakeCompxItems.map(item => {
+    this.allItems = this.mapItems();
+    this.trendingItems = this.mapItems();
+  }
+
+  private mapItems = () => {
+    return fakeCompxItems.map(item => {
       if (item.valChange > 0) {
         item.arrowIcon = 'gg-arrow-up';
         item.changeColorClass += ' positive-change';
@@ -28,5 +37,11 @@ export class ExchangeGridComponent {
 
       return item;
     });
+  }
+
+  searchForItems = (event: any) => {
+    let lowerItemNames = this.allItems.map(item => item.name.toLowerCase());
+    let lowerSearchValue = event.target.value.toLowerCase();
+    console.log(lowerSearchValue);
   }
 }
