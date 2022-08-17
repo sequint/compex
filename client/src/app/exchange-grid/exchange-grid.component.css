@@ -25,6 +25,10 @@
   margin-left: auto;
 }
 
+.hide {
+  display: none;
+}
+
 .ex-item {
   display: inline-flexbox;
   background-color: white;

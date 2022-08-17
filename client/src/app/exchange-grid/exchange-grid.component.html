@@ -1,16 +1,30 @@
 <section class="ex-grid">
   <div class="search-bar-container">
-    <input type="text" placeholder="Search for compost items on compx" class="search-bar" />
+    <input type="text" placeholder="Search for compost items on compx" class="search-bar" (keyup)="searchForItems($event)" />
   </div>
-  
-  <h3 class="trending-title">Trending on compx</h3>
-  <div class="ex-item-container">
-    <div class="ex-item" *ngFor="let item of compxItems">
-      <img src={{item.icon}} alt="banana" class="item-icon">
-      <h6 class="item-name">{{item.name}}</h6>
-      <p class="item-ex-val">${{item.value}} per lb.</p>
-      <i class={{item.arrowIcon}}></i>
-      <p class={{item.changeColorClass}}>{{item.valChange}}%</p>
+
+  <div class={{getSearchedItemsClass()}}>
+    <div class="ex-item-container">
+      <div class="ex-item" *ngFor="let item of allItems">
+        <img src={{item.icon}} alt="banana" class="item-icon">
+        <h6 class="item-name">{{item.name}}</h6>
+        <p class="item-ex-val">${{item.value}} per lb.</p>
+        <i class={{item.arrowIcon}}></i>
+        <p class={{item.changeColorClass}}>{{item.valChange}}%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class={{getTrendingItemsClass()}}>
+    <h3 class="trending-title">Trending on compx</h3>
+    <div class="ex-item-container">
+      <div class="ex-item" *ngFor="let item of trendingItems">
+        <img src={{item.icon}} alt="banana" class="item-icon">
+        <h6 class="item-name">{{item.name}}</h6>
+        <p class="item-ex-val">${{item.value}} per lb.</p>
+        <i class={{item.arrowIcon}}></i>
+        <p class={{item.changeColorClass}}>{{item.valChange}}%</p>
+      </div>
     </div>
   </div>
 </section>
