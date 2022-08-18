@@ -23,6 +23,7 @@
   max-width: 696px;
   margin-right: auto;
   margin-left: auto;
+  min-height: 348px;
 }
 
 .hide {
