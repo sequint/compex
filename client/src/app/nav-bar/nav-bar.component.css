@@ -49,6 +49,10 @@ li {
 
 .side-nav-container {
   display: flex;
+  height: 65px;
+  background-color: #CFD6EA;
+  top: 0;
+  position: sticky;
 }
 
 .side-nav-button {
@@ -83,6 +87,11 @@ li {
   margin: 0px 25px 30px auto;
   transform: scale(var(--ggs, 1.5));
   color: #423629;
+}
+
+.top-nav-container {
+  top: 0;
+  position: sticky;
 }
 
 .top-nav-menu-item-container {

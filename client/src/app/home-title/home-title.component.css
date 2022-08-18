@@ -4,7 +4,7 @@
   background-color: #CFD6EA;
   height: 250px;
   text-align: center;
-  padding-top: 75px;
+  padding-top: 10px;
 }
 
 .large-logo {
@@ -12,12 +12,6 @@
   font-size: 150px;
   margin: 0px;
   color: #4F5D2F;
-}
-
-@media screen and (min-width: 1025px) {
-  .title-container {
-    padding-top: 10px;
-  }
 }
 
 @media screen and (max-width: 600px) {
