@@ -33,13 +33,17 @@ export class ExchangeGridComponent {
   private mapItems = () => {
     return fakeCompxItems.map(item => {
       if (item.valChange > 0) {
-        item.arrowIcon = 'gg-arrow-up';
+        item.downArrowClass = 'hide';
         item.changeColorClass += ' positive-change';
-      };
-      if (item.valChange < 0) {
-        item.arrowIcon = 'gg-arrow-down';
+      }
+      else if (item.valChange < 0) {
+        item.upArrowClass = 'hide';
         item.changeColorClass += ' negative-change';
-      };
+      }
+      else {
+        item.upArrowClass = 'hide';
+        item.downArrowClass = 'hide';
+      }
 
       return item;
     });
@@ -61,6 +65,7 @@ export class ExchangeGridComponent {
       this.allItems = this.tempItemsArray.filter(item => {
         return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
       });
+
     }
     else {
       this.searchedItemsClass = 'hide';

@@ -10,7 +10,18 @@
         <img src={{item.icon}} alt="banana" class="item-icon">
         <h6 class="item-name">{{item.name}}</h6>
         <p class="item-ex-val">${{item.value}} per lb.</p>
-        <i class={{item.arrowIcon}}></i>
+        <svg class={{item.upArrowClass}} width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.6568 8.96219L16.2393 10.3731L12.9843 7.10285L12.9706 20.7079L10.9706 20.7059L10.9843 7.13806L7.75404 10.3532L6.34314 8.93572L12.0132 3.29211L17.6568 8.96219Z"
+            fill="currentColor" />
+        </svg>
+        <svg class={{item.downArrowClass}} width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.0001 3.67157L13.0001 3.67157L13.0001 16.4999L16.2426 13.2574L17.6568 14.6716L12 20.3284L6.34314 14.6716L7.75735 13.2574L11.0001 16.5001L11.0001 3.67157Z"
+            fill="currentColor" />
+        </svg>
         <p class={{item.changeColorClass}}>{{item.valChange}}%</p>
       </div>
     </div>
@@ -23,7 +34,16 @@
         <img src={{item.icon}} alt="banana" class="item-icon">
         <h6 class="item-name">{{item.name}}</h6>
         <p class="item-ex-val">${{item.value}} per lb.</p>
-        <i class={{item.arrowIcon}}></i>
+        <svg class={{item.upArrowClass}} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.6568 8.96219L16.2393 10.3731L12.9843 7.10285L12.9706 20.7079L10.9706 20.7059L10.9843 7.13806L7.75404 10.3532L6.34314 8.93572L12.0132 3.29211L17.6568 8.96219Z"
+            fill="currentColor" />
+        </svg>
+        <svg class={{item.downArrowClass}} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.0001 3.67157L13.0001 3.67157L13.0001 16.4999L16.2426 13.2574L17.6568 14.6716L12 20.3284L6.34314 14.6716L7.75735 13.2574L11.0001 16.5001L11.0001 3.67157Z"
+            fill="currentColor" />
+        </svg>
         <p class={{item.changeColorClass}}>{{item.valChange}}%</p>
       </div>
     </div>

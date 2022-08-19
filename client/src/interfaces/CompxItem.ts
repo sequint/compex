@@ -3,6 +3,7 @@ export interface CompxItem {
     icon: string,
     value: number,
     valChange: number,
-    arrowIcon: string,
+    upArrowClass: string,
+    downArrowClass: string,
     changeColorClass: string
 }
