@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@import url('https://css.gg/arrow-up.css');
+@import url('https://css.gg/arrow-down.css');
+
+.ex-grid {
+  background-color: #CFD6EA;
+  text-align: center;
+  width: 100%;
+}
+
+.trending-title {
+  margin: 0px;
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 25px;
+  color: #423629;
+}
+
+.ex-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px;
+  justify-content: space-around;
+  max-width: 696px;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 348px;
+}
+
+.hide {
+  display: none;
+}
+
+.ex-item {
+  display: inline-flexbox;
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  margin: 12px;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 25%) 0px 8px 24px;
+}
+
+.item-icon {
+  height: 40px;
+  margin-top: 10px;
+}
+
+.item-name {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.item-ex-val {
+  font-size: 15px;
+  color: #423629;
+  margin: 0px;
+}
+
+.arrow-up {
+  display: inline-flex;
+  vertical-align: middle;
+  color: green;
+  margin-bottom: 3px;
+}
+
+.arrow-down {
+  display: inline-flex;
+  vertical-align: bottom;
+  color: red;
+  /* margin-bottom: 3px; */
+}
+
+.change-perc {
+  display: inline-flex;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.positive-change {
+  color: green;
+}
+
+.negative-change {
+  color: red;
+}
+
+
+/* Search Bar Styles */
+
+.search-bar-container {
+  text-align: center;
+  background-color: #CFD6EA;
+  padding-bottom: 50px;
+}
+
+.search-bar {
+  border: #7D7E75 solid 2px;
+  border-radius: 15px;
+  width: 450px;
+  height: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.search-bar:focus-visible {
+  outline: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  .search-bar {
+    width: 300px;
+  }
+}

@@ -8,8 +8,9 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { HomeTitleComponent } from './pages/home/components/home-title/home-title.component';
 import { ExchangeGridComponent } from './pages/home/components/exchange-grid/exchange-grid.component';
 import { CompostDividerComponent } from './pages/home/components/compost-divider/compost-divider.component';
-import { Home } from './pages/home/home.component';
-import { Marketplace } from './pages/marketplace/marketplace.component';
+import { HomePage } from './pages/home/home.component';
+import { MarketplacePage } from './pages/marketplace/marketplace.component';
+import { ExchangeListComponent } from './pages/marketplace/components/exchange-list/exchange-list.component';
 
 
 @NgModule({
@@ -19,15 +20,16 @@ import { Marketplace } from './pages/marketplace/marketplace.component';
     HomeTitleComponent,
     ExchangeGridComponent,
     CompostDividerComponent,
-    Home,
-    Marketplace
+    ExchangeListComponent,
+    HomePage,
+    MarketplacePage
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: Home },
-      { path: 'marketplace', component: Marketplace },
+      { path: '', component: HomePage },
+      { path: 'marketplace', component: MarketplacePage },
     ])
   ],
   exports: [RouterModule],
