@@ -25,7 +25,7 @@ export class NavBarComponent {
     this.closedCntClass = 'side-menu-container';
     this.openMnClass = 'side-menu show-side-menu';
     this.closedMnClass = 'side-menu';
-    this.menuItems = ['home', 'marketplace'];
+    this.menuItems = ['home', 'marketplace', 'inventory'];
   }
 
   toggleMenuOpen = () => this.menuOpen = !this.menuOpen;
