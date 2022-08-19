@@ -9,6 +9,7 @@ import { HomeTitleComponent } from './pages/home/components/home-title/home-titl
 import { ExchangeGridComponent } from './pages/home/components/exchange-grid/exchange-grid.component';
 import { CompostDividerComponent } from './pages/home/components/compost-divider/compost-divider.component';
 import { Home } from './pages/home/home.component';
+import { Marketplace } from './pages/marketplace/marketplace.component';
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import { Home } from './pages/home/home.component';
     HomeTitleComponent,
     ExchangeGridComponent,
     CompostDividerComponent,
-    Home
+    Home,
+    Marketplace
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: Home },
+      { path: 'marketplace', component: Marketplace },
     ])
   ],
   exports: [RouterModule],
