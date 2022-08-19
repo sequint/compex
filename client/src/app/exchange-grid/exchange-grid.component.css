@@ -57,18 +57,18 @@
   margin: 0px;
 }
 
-.gg-arrow-up {
+.arrow-up {
   display: inline-flex;
-  height: 30px;
   vertical-align: middle;
   color: green;
+  margin-bottom: 3px;
 }
 
-.gg-arrow-down {
+.arrow-down {
   display: inline-flex;
-  height: 30px;
   vertical-align: bottom;
   color: red;
+  /* margin-bottom: 3px; */
 }
 
 .change-perc {
