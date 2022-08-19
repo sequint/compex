@@ -1,4 +1,4 @@
-import { CompxItem } from 'src/interfaces/CompxItem';
+import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 
 export const fakeCompxItems: CompxItem[] = [
   {

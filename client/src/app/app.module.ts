@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HomeTitleComponent } from './home-title/home-title.component';
-import { ExchangeGridComponent } from './exchange-grid/exchange-grid.component';
-import { CompostDividerComponent } from './compost-divider/compost-divider.component';
+import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { HomeTitleComponent } from './pages/home/components/home-title/home-title.component';
+import { ExchangeGridComponent } from './pages/home/components/exchange-grid/exchange-grid.component';
+import { CompostDividerComponent } from './pages/home/components/compost-divider/compost-divider.component';
+import { Home } from './pages/home/home.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CompostDividerComponent } from './compost-divider/compost-divider.compo
     NavBarComponent,
     HomeTitleComponent,
     ExchangeGridComponent,
-    CompostDividerComponent
+    CompostDividerComponent,
+    Home
   ],
   imports: [
     BrowserModule,

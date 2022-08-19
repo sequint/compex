@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CompxItem } from 'src/interfaces/CompxItem';
+import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 
 /**
