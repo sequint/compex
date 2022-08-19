@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+interface MenuItem {
+  title: string,
+  route: string
+}
+
 /**
  * @title NavBar
  */
@@ -17,7 +22,7 @@ export class NavBarComponent {
   private openMnClass: string;
   private closedMnClass: string;
 
-  menuItems: string[];
+  menuItems: MenuItem[];
 
   constructor() {
     this.menuOpen = false;
@@ -25,7 +30,20 @@ export class NavBarComponent {
     this.closedCntClass = 'side-menu-container';
     this.openMnClass = 'side-menu show-side-menu';
     this.closedMnClass = 'side-menu';
-    this.menuItems = ['home', 'marketplace', 'inventory'];
+    this.menuItems = [
+      {
+        title: 'home',
+        route: '/'
+      },
+      {
+        title: 'marketplace',
+        route: '/marketplace'
+      },
+      {
+        title: 'inventory',
+        route: '/inventory'
+      }
+    ];
   }
 
   toggleMenuOpen = () => this.menuOpen = !this.menuOpen;
