@@ -1,3 +1,7 @@
 <div class="search-bar-container">
-  <input type="text" placeholder="Search for compost items on compx" class="search-bar" (keyup)="setSearchValue($event)" />
+  <input
+    type="text"
+    placeholder="Search for compost items on compx"
+    class="search-bar"
+    (input)="setSearchValue($event)" />
 </div>
