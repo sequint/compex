@@ -11,6 +11,7 @@ import { CompostDividerComponent } from './pages/home/components/compost-divider
 import { HomePage } from './pages/home/home.component';
 import { MarketplacePage } from './pages/marketplace/marketplace.component';
 import { ExchangeListComponent } from './pages/marketplace/components/exchange-list/exchange-list.component';
+import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ExchangeListComponent } from './pages/marketplace/components/exchange-l
     ExchangeGridComponent,
     CompostDividerComponent,
     ExchangeListComponent,
+    SearchBarComponent,
     HomePage,
     MarketplacePage
   ],
