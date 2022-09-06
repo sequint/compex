@@ -60,7 +60,6 @@ export class ExchangeListComponent {
     this.searchValue = searchValue;
 
     let lowerSearchValue = this.searchValue.toLowerCase();
-    console.log(lowerSearchValue);
 
     if (lowerSearchValue.length > 0) {
       this.searchedItemsClass = '';
