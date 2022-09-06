@@ -1,7 +1,6 @@
 <section class="ex-grid">
-  <div class="search-bar-container">
-    <input type="text" placeholder="Search for compost items on compx" class="search-bar" (keyup)="searchForItems($event)" />
-  </div>
+
+  <search-bar (searchValueEvent)="searchForItems($event)"></search-bar>
 
   <div class={{getSearchedItemsClass()}}>
     <h3 class="trending-title">Results for '{{getSearchValue()}}'</h3>
@@ -48,4 +47,5 @@
       </div>
     </div>
   </div>
+
 </section>

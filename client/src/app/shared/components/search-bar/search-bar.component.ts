@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 /**
  * @title ExchangeList
@@ -12,13 +12,10 @@ import { Component } from '@angular/core';
 
 export class SearchBarComponent {
 
-  private searchValue: string;
+  // Output event value to pass search value to parent component
+  @Output() searchValueEvent = new EventEmitter<string>();
 
-  constructor() {
-    this.searchValue = '';
-  }
-
-  getSearchValue = () => this.searchValue;
-  setSearchValue = (event: any) => this.searchValue = event.target.value;
+  // Sends the value from search input to the parent component
+  setSearchValue = (event: any) => this.searchValueEvent.emit(event.target.value);
   
 }
