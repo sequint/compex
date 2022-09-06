@@ -53,10 +53,14 @@ export class ExchangeGridComponent {
   getTrendingItemsClass = () => this.trendingItemsClass;
   getSearchValue = () => this.searchValue;
 
-  searchForItems = (event: any) => {
-    this.searchValue = event.target.value;
+  setItemSearchValue = (searchValue: string) => this.searchValue = searchValue;
 
-    let lowerSearchValue = event.target.value.toLowerCase();
+  searchForItems = (searchValue: string) => {
+
+    this.searchValue = searchValue;
+
+    let lowerSearchValue = this.searchValue.toLowerCase();
+    console.log(lowerSearchValue);
 
     if (lowerSearchValue.length > 0) {
       this.searchedItemsClass = '';
@@ -71,5 +75,7 @@ export class ExchangeGridComponent {
       this.searchedItemsClass = 'hide';
       this.trendingItemsClass = '';
     }
+
   }
+  
 }
