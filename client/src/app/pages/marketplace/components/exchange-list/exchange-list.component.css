@@ -8,8 +8,9 @@
   width: 100%;
 }
 
-.trending-title {
-  margin: 0px;
+.list-page-title {
+  margin-top: 0px;
+  padding-top:10px;
   font-family: 'Signika Negative', sans-serif;
   font-size: 25px;
   color: #423629;

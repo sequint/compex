@@ -1,9 +1,10 @@
 <section class="ex-grid">
 
+  <h3 class="list-page-title">Find items in the marketplace</h3>
+
   <search-bar (searchValueEvent)="searchForItems($event)"></search-bar>
 
   <div class={{getSearchedItemsClass()}}>
-    <h3 class="trending-title">Results for '{{getSearchValue()}}'</h3>
     <div class="ex-item-container">
       <div class="ex-item" *ngFor="let item of allItems">
         <img src={{item.icon}} alt="banana" class="compx-item item-icon">
@@ -27,7 +28,6 @@
   </div>
 
   <div class={{getTrendingItemsClass()}}>
-    <h3 class="trending-title">Trending on compx</h3>
     <div class="ex-item-container">
       <div class="ex-item" *ngFor="let item of trendingItems">
         <img src={{item.icon}} alt="banana" class="compx-item item-icon">
