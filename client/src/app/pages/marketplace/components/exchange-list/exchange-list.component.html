@@ -6,9 +6,9 @@
     <h3 class="trending-title">Results for '{{getSearchValue()}}'</h3>
     <div class="ex-item-container">
       <div class="ex-item" *ngFor="let item of allItems">
-        <img src={{item.icon}} alt="banana" class="item-icon">
-        <h6 class="item-name">{{item.name}}</h6>
-        <p class="item-ex-val">${{item.value}} per lb.</p>
+        <img src={{item.icon}} alt="banana" class="compx-item item-icon">
+        <h6 class="compx-item item-name">{{item.name}}</h6>
+        <p class="compx-item item-ex-val">${{item.value}} per lb.</p>
         <svg class={{item.upArrowClass}} width="24" height="24" viewBox="0 0 24 24" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
@@ -30,9 +30,9 @@
     <h3 class="trending-title">Trending on compx</h3>
     <div class="ex-item-container">
       <div class="ex-item" *ngFor="let item of trendingItems">
-        <img src={{item.icon}} alt="banana" class="item-icon">
-        <h6 class="item-name">{{item.name}}</h6>
-        <p class="item-ex-val">${{item.value}} per lb.</p>
+        <img src={{item.icon}} alt="banana" class="compx-item item-icon">
+        <h6 class="compx-item item-name">{{item.name}}</h6>
+        <p class="compx-item item-ex-val">${{item.value}} per lb.</p>
         <svg class={{item.upArrowClass}} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M17.6568 8.96219L16.2393 10.3731L12.9843 7.10285L12.9706 20.7079L10.9706 20.7059L10.9843 7.13806L7.75404 10.3532L6.34314 8.93572L12.0132 3.29211L17.6568 8.96219Z"

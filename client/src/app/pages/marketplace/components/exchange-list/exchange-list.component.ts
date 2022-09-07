@@ -34,11 +34,11 @@ export class ExchangeListComponent {
     return fakeCompxItems.map(item => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
-        item.changeColorClass += ' positive-change';
+        item.changeColorClass += ' compx-item positive-change';
       }
       else if (item.valChange < 0) {
         item.upArrowClass = 'hide';
-        item.changeColorClass += ' negative-change';
+        item.changeColorClass += ' compx-item negative-change';
       }
       else {
         item.upArrowClass = 'hide';

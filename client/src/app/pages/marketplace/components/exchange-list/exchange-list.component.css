@@ -15,53 +15,41 @@
   color: #423629;
 }
 
-.ex-item-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 20px;
-  justify-content: space-around;
-  max-width: 696px;
-  margin-right: auto;
-  margin-left: auto;
-  min-height: 348px;
-}
-
 .hide {
   display: none;
 }
 
 .ex-item {
-  display: inline-flexbox;
+  display: inline-flex;
   background-color: white;
-  height: 150px;
-  width: 150px;
-  margin: 12px;
-  border-radius: 20px;
-  box-shadow: rgb(0 0 0 / 25%) 0px 8px 24px;
+  height: 75px;
+  margin: 0px 0px;
+  width: 100%;
+}
+
+.compx-item {
+  margin: auto 5px;
 }
 
 .item-icon {
   height: 40px;
-  margin-top: 10px;
 }
 
 .item-name {
   font-family: 'Signika Negative', sans-serif;
   font-size: 15px;
-  margin: 5px;
 }
 
 .item-ex-val {
   font-size: 15px;
   color: #423629;
-  margin: 0px;
 }
 
 .arrow-up {
   display: inline-flex;
   vertical-align: middle;
   color: green;
-  margin-bottom: 3px;
+  /* margin-bottom: 3px; */
 }
 
 .arrow-down {
@@ -73,8 +61,6 @@
 
 .change-perc {
   display: inline-flex;
-  margin-bottom: 0px;
-  margin-top: 15px;
   font-size: 20px;
 }
 
