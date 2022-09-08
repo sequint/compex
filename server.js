@@ -11,8 +11,6 @@ const syncDB = require('./db')
 
 const app = express()
 
-// Join back end and front end.
-app.use(express.static(join(__dirname, 'client', 'build')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -39,11 +37,6 @@ app.use(express.json())
 //   .catch(err => cb(err))))
 
 app.use(require('./routes'))
-
-// Catch all - if no route is specified, go to the index html file.
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'client', 'build', 'index.html'))
-})
 
 // Call the syncDB method form db foder to sync with database, then turn on database.
 syncDB()
