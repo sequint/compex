@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
+import { CrudService } from 'src/app/shared/services/crud.service';
 import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 
 /**
@@ -12,22 +13,32 @@ import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
   }
 )
 
-export class ExchangeGridComponent {
+export class ExchangeGridComponent implements OnInit {
   private searchedItemsClass: string;
   private trendingItemsClass: string;
   private searchValue: string;
   private tempItemsArray: CompxItem[];
   
-  allItems: CompxItem[];
-  trendingItems: CompxItem[];
+  allItems: any = [];
+  trendingItems: any = [];
 
-  constructor() {
+  constructor(public crudService: CrudService) {
     this.searchedItemsClass = 'hide';
     this.trendingItemsClass = '';
     this.searchValue = '';
     this.allItems = this.mapItems();
     this.trendingItems = this.mapItems();
     this.tempItemsArray = this.allItems;
+  }
+
+  ngOnInit = () => {
+    this.getAllItems();
+  }
+
+  getAllItems = () => {
+    this.crudService.getAllItems().subscribe((res: {}) => {
+      this.allItems = res;
+    });
   }
 
   private mapItems = () => {
