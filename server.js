@@ -1,18 +1,18 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const express = require('express')
-const { join } = require('path')
+const express = require('express');
+const { join } = require('path');
 // const passport = require('passport')
 // const { Strategy: LocalStrategy } = require('passport-local')
 // const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt')
 
 // const { User } = require('./models')
-const syncDB = require('./db')
+const syncDB = require('./db');
 
-const app = express()
+const app = express();
 
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // // Initializing passport.
 // app.use(passport.initialize())
@@ -36,9 +36,9 @@ app.use(express.json())
 //   .then(user => cb(null, user))
 //   .catch(err => cb(err))))
 
-app.use(require('./routes'))
+app.use(require('./routes'));
 
 // Call the syncDB method form db foder to sync with database, then turn on database.
 syncDB()
   .then(() => app.listen(process.env.PORT || 3000))
-  .catch(err => console.log(err))
+  .catch(err => console.log(err));
