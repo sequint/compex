@@ -17,8 +17,17 @@ describe('SearchBarComponent', () => {
     searchBarComponent = componentFixure.componentInstance;
   });
 
-  // Test script for component creation
+  // Test for component creation
   it('should create the search bar app', () => {
     expect(searchBarComponent).toBeTruthy();
+  });
+
+  // Test setSearchValue func to return the input given to it
+  it('should emit from search bar on input change', () => {
+    spyOn(searchBarComponent, 'setSearchValue');
+
+    searchBarComponent.setSearchValue('hello');
+
+    expect(searchBarComponent.setSearchValue).toHaveBeenCalledWith('hello');
   });
 });
