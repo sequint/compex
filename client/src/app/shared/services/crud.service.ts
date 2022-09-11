@@ -8,7 +8,7 @@ import { CompxItem } from '../interfaces/CompxItem';
   providedIn: 'root',
 })
 export class CrudService {
-  endpoint = 'https://localhost:3000/api';
+  endpoint = 'http://localhost:3000/api';
 
   constructor(private httpClient: HttpClient) {}
 
