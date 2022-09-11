@@ -14,35 +14,33 @@ import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 )
 
 export class ExchangeGridComponent implements OnInit {
-  private searchedItemsClass: string;
-  private trendingItemsClass: string;
-  private searchValue: string;
-  private tempItemsArray: CompxItem[];
+  private searchedItemsClass: string = 'hide';
+  private trendingItemsClass: string = '';
+  private searchValue: string = '';
   
   allItems: any = [];
+  tempAllItems: any = [];
+  tempItemsArray: any = [];
   trendingItems: any = [];
 
-  constructor(public crudService: CrudService) {
-    this.searchedItemsClass = 'hide';
-    this.trendingItemsClass = '';
-    this.searchValue = '';
-    this.allItems = this.mapItems();
-    this.trendingItems = this.mapItems();
-    this.tempItemsArray = this.allItems;
-  }
+  constructor(public crudService: CrudService) {}
 
-  ngOnInit = () => {
-    this.getAllItems();
-  }
-
-  getAllItems = () => {
+  getAllItems() {
+    console.log('in get all');
     this.crudService.getAllItems().subscribe((res: {}) => {
-      this.allItems = res;
+      this.tempAllItems = res;
+      this.allItems = this.mapItems();
+      this.tempItemsArray = this.allItems;
+      this.trendingItems = this.allItems;
     });
   }
 
+  ngOnInit() {
+    this.getAllItems();
+  }
+
   private mapItems = () => {
-    return fakeCompxItems.map(item => {
+    return this.tempAllItems.map((item: any) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
         item.changeColorClass += ' positive-change';
@@ -77,7 +75,7 @@ export class ExchangeGridComponent implements OnInit {
       this.searchedItemsClass = '';
       this.trendingItemsClass = 'hide';
 
-      this.allItems = this.tempItemsArray.filter(item => {
+      this.allItems = this.tempItemsArray.filter((item: any) => {
         return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
       });
 
