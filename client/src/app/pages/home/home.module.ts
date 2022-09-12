@@ -6,7 +6,6 @@ import { CompostDividerComponent } from './components/compost-divider/compost-di
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
-
 @NgModule({
   declarations: [
     HomeTitleComponent,

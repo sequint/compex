@@ -4,7 +4,6 @@ import { ExchangeListComponent } from './components/exchange-list/exchange-list.
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
-
 @NgModule({
   declarations: [
     ExchangeListComponent
