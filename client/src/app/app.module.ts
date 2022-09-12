@@ -4,29 +4,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './pages/home/home.module';
+import { MarketplaceModule } from './pages/marketplace/marketplace.module';
 
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
-import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
-import { HomeModule } from './pages/home/home.module';
 import { HomePage } from './pages/home/home.component';
 import { MarketplacePage } from './pages/marketplace/marketplace.component';
-import { MarketplaceModule } from './pages/marketplace/marketplace.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePage,
-    MarketplacePage,
-    NavBarComponent,
-    SearchBarComponent
+    MarketplacePage
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    SharedModule,
     HomeModule,
     MarketplaceModule,
     RouterModule.forRoot([
@@ -35,9 +33,7 @@ import { MarketplaceModule } from './pages/marketplace/marketplace.module';
     ])
   ],
   exports: [
-    RouterModule,
-    NavBarComponent,
-    SearchBarComponent,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
