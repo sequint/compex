@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 import { CrudService } from 'src/app/shared/services/crud.service';
-import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
+import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 
 /**
  * @title ExchangeGrid
@@ -29,7 +28,7 @@ export class ExchangeGridComponent implements OnInit {
     console.log('in get all');
     this.crudService.getAllItems().subscribe((res: {}) => {
       this.tempAllItems = res;
-      this.allItems = this.mapItems();
+      this.allItems = this.addArrowClassesToItems();
       this.tempItemsArray = this.allItems;
       this.trendingItems = this.allItems;
     });
@@ -39,7 +38,7 @@ export class ExchangeGridComponent implements OnInit {
     this.getAllItems();
   }
 
-  private mapItems = () => {
+  private addArrowClassesToItems = () => {
     return this.tempAllItems.map((item: any) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
