@@ -1,6 +1,6 @@
 <div class="tabs-holder">
   <ul class="tabs-container">
-    <li class="tab-item focused-tab">Green Items</li>
-    <li class="tab-item unfocused-tab">Brown Items</li>
+    <li class="tab-item {{greenItemFocusClass}}" (click)="focusGreenItems()">Green Items</li>
+    <li class="tab-item {{brownItemFocusClass}}" (click)="focusBrownItems()">Brown Items</li>
   </ul>
 </div>

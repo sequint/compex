@@ -11,5 +11,16 @@ import { Component } from "@angular/core";
 )
 
 export class ExchangeListTabs {
+  greenItemFocusClass: string = 'focused-tab';
+  brownItemFocusClass: string = 'unfocused-tab';
+
+  focusGreenItems() {
+    this.greenItemFocusClass = 'focused-tab';
+    this. brownItemFocusClass = 'unfocused-tab';
+  }
   
+  focusBrownItems() {
+    this.brownItemFocusClass = 'focused-tab';
+    this.greenItemFocusClass = 'unfocused-tab';
+  }
 }
