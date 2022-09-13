@@ -17,7 +17,7 @@ export class ExchangeGridComponent implements OnInit {
   private trendingItemsClass: string = '';
   private searchValue: string = '';
   
-  trendingItems: any = [];
+  trendingItems: CompxItem[] = [];
   itemSearchResults: CompxItem[] = [];
 
   constructor(public crudService: CrudService) {}
@@ -25,7 +25,7 @@ export class ExchangeGridComponent implements OnInit {
   //** Private functions that intiate all item arrays from on init **//
 
   private addArrowClassesToItems(trendingItems: any) {
-    return trendingItems.map((item: any) => {
+    return trendingItems.map((item: CompxItem) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
         item.changeColorClass += ' positive-change';
@@ -49,7 +49,7 @@ export class ExchangeGridComponent implements OnInit {
       this.trendingItems = this.addArrowClassesToItems(res);
     });
   }
-  
+
   ngOnInit() {
     this.getTrendingItems();
   }
