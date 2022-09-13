@@ -16,21 +16,13 @@ interface MenuItem {
 )
 
 export class NavBarComponent {
-  private menuOpen: boolean;
-  private openCntClass: string;
-  private closedCntClass: string;
-  private openMnClass: string;
-  private closedMnClass: string;
+  private menuOpen: boolean = false;
+  private openCntClass: string = 'side-menu-container show-menu-container';
+  private closedCntClass: string = 'side-menu-container';
+  private openMnClass: string = 'side-menu show-side-menu';
+  private closedMnClass: string = 'side-menu';
 
-  menuItems: MenuItem[];
-
-  constructor() {
-    this.menuOpen = false;
-    this.openCntClass = 'side-menu-container show-menu-container';
-    this.closedCntClass = 'side-menu-container';
-    this.openMnClass = 'side-menu show-side-menu';
-    this.closedMnClass = 'side-menu';
-    this.menuItems = [
+  menuItems: MenuItem[] = [
       {
         title: 'home',
         route: '/'
@@ -44,9 +36,10 @@ export class NavBarComponent {
         route: '/inventory'
       }
     ];
-  }
 
   toggleMenuOpen = () => this.menuOpen = !this.menuOpen;
+
   getMenuContainerClass = () => this.menuOpen ? this.openCntClass : this.closedCntClass;
+  
   getMenuClass = () => this.menuOpen ? this.openMnClass : this.closedMnClass;
 }
