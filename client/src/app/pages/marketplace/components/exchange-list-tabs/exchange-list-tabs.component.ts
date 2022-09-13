@@ -11,9 +11,10 @@ import { Component, EventEmitter, Output } from "@angular/core";
 )
 
 export class ExchangeListTabs {
-  @Output() focusedTabEvent = new EventEmitter<string>();
   greenItemFocusClass: string = 'focused-tab';
   brownItemFocusClass: string = 'unfocused-tab';
+
+  @Output() focusedTabEvent = new EventEmitter<string>();
 
   emitCurrentFocusedTab(tabName: string) {
     this.focusedTabEvent.emit(tabName);
