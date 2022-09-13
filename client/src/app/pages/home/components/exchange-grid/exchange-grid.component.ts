@@ -13,12 +13,11 @@ import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 )
 
 export class ExchangeGridComponent implements OnInit {
+  trendingItems: CompxItem[] = [];
+  itemSearchResults: CompxItem[] = [];
   searchedItemsClass: string = 'hide';
   trendingItemsClass: string = '';
   searchValue: string = '';
-  
-  trendingItems: CompxItem[] = [];
-  itemSearchResults: CompxItem[] = [];
 
   constructor(public crudService: CrudService) {}
 
