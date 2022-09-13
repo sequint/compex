@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+
+.tabs-container {
+  text-align: center;
+  padding: 25px 0px 0px 0px;
+  margin: 0px;
+  height: 50px;
+  background-color: #CFD6EA;
+}
+
+.tab-item {
+  list-style: none;
+  display: inline;
+  padding: 20px;
+  margin: 5px;
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.focused-tab {
+  background-color: #4F5D2F;
+  color: white;
+}
+
+.unfocused-tab {
+  background-color: #b0b2b89c;
+}
