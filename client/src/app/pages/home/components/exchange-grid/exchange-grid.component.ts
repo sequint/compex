@@ -13,16 +13,14 @@ import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 )
 
 export class ExchangeGridComponent implements OnInit {
-  private searchedItemsClass: string = 'hide';
-  private trendingItemsClass: string = '';
-  private searchValue: string = '';
+  searchedItemsClass: string = 'hide';
+  trendingItemsClass: string = '';
+  searchValue: string = '';
   
   trendingItems: CompxItem[] = [];
   itemSearchResults: CompxItem[] = [];
 
   constructor(public crudService: CrudService) {}
-
-  //** Private functions that intiate all item arrays from on init **//
 
   private addArrowClassesToItems(trendingItems: any) {
     return trendingItems.map((item: CompxItem) => {
@@ -50,36 +48,28 @@ export class ExchangeGridComponent implements OnInit {
     });
   }
 
+  // On component load get trending items from the server
   ngOnInit() {
     this.getTrendingItems();
   }
 
-  //** Public functions for user interaction **//
-
-  getSearchedItemsClass = () => this.searchedItemsClass;
-  getTrendingItemsClass = () => this.trendingItemsClass;
-  getSearchValue = () => this.searchValue;
-
-  searchForItems = (searchValue: string) => {
-
+  searchForItems(searchValue: string) {
+    // Assign input value to searchValue
     this.searchValue = searchValue;
 
-    let lowerSearchValue = this.searchValue.toLowerCase();
+    // Filter trending items into search results by comparing search val to item name
+    this.itemSearchResults = this.trendingItems.filter((item: any) => {
+      return item.name.toLowerCase().slice(0, searchValue.length) === searchValue.toLowerCase();
+    });
 
-    if (lowerSearchValue.length > 0) {
+    // Change grid visibility based on whether there is a search input or not
+    if (searchValue.length > 0) {
       this.searchedItemsClass = '';
       this.trendingItemsClass = 'hide';
-
-      this.itemSearchResults = this.trendingItems.filter((item: any) => {
-        return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
-      });
-
     }
     else {
       this.searchedItemsClass = 'hide';
       this.trendingItemsClass = '';
     }
-
   }
-  
 }
