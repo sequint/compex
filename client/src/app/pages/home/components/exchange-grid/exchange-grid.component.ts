@@ -17,16 +17,16 @@ export class ExchangeGridComponent implements OnInit {
   private trendingItemsClass: string = '';
   private searchValue: string = '';
   
-  allItems: any = [];
-  tempItemsArray: any = [];
   trendingItems: any = [];
+  allItems: any = [];
 
   constructor(public crudService: CrudService) {}
 
   //** Private functions that intiate all item arrays from on init **//
 
-  private addArrowClassesToItems(trendingItems: CompxItem[]) {
-    return this.trendingItems.map((item: any) => {
+  private addArrowClassesToItems(trendingItems: any) {
+    console.log('in');
+    return trendingItems.map((item: any) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
         item.changeColorClass += ' positive-change';
@@ -45,18 +45,17 @@ export class ExchangeGridComponent implements OnInit {
   }
 
   // Get all items then assign items to arrays to be worked with
-  private getAllItems() {
+  private getAndAssignItems() {
     this.crudService.getAllItems().subscribe((res: {}) => {
       this.trendingItems = res;
-      this.allItems = this.addArrowClassesToItems(this.trendingItems);
-      this.tempItemsArray = this.allItems;
-      this.trendingItems = this.allItems;
+      this.trendingItems = this.addArrowClassesToItems(this.trendingItems);
+      this.allItems = this.trendingItems;
     });
   }
 
-  // On component intialization, get all trending items from the server
+  // On component intialization, get all trending items and assign to local arrays
   ngOnInit() {
-    this.getAllItems();
+    this.getAndAssignItems();
   }
 
   //** Public functions for user interaction **//
@@ -65,20 +64,17 @@ export class ExchangeGridComponent implements OnInit {
   getTrendingItemsClass = () => this.trendingItemsClass;
   getSearchValue = () => this.searchValue;
 
-  setItemSearchValue = (searchValue: string) => this.searchValue = searchValue;
-
   searchForItems = (searchValue: string) => {
 
     this.searchValue = searchValue;
 
     let lowerSearchValue = this.searchValue.toLowerCase();
-    console.log(lowerSearchValue);
 
     if (lowerSearchValue.length > 0) {
       this.searchedItemsClass = '';
       this.trendingItemsClass = 'hide';
 
-      this.allItems = this.tempItemsArray.filter((item: any) => {
+      this.allItems = this.trendingItems.filter((item: any) => {
         return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
       });
 
