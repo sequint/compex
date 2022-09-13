@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 )
 
 export class MarketplacePage {
-  currentTab: string = '';
+  currentTab: string = 'Green';
 
   toggleCurrentTab = (currentTab: string) => this.currentTab = currentTab;
 }

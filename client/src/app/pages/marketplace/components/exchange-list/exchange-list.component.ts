@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CrudService } from 'src/app/shared/services/crud.service';
 import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 
@@ -18,6 +18,8 @@ export class ExchangeListComponent implements OnInit {
   searchedItemsClass: string = 'hide';
   trendingItemsClass: string = '';
   searchValue: string = '';
+
+  @Input() focusedTab = '';
 
   constructor(public crudService: CrudService) {}
 

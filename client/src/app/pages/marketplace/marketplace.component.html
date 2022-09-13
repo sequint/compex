@@ -1,5 +1,5 @@
 <nav-bar></nav-bar>
 <div>
   <exchange-list-tabs (focusedTabEvent)="toggleCurrentTab($event)"></exchange-list-tabs>
-  <exchange-list></exchange-list>
+  <exchange-list [focusedTab]="currentTab"></exchange-list>
 </div>
