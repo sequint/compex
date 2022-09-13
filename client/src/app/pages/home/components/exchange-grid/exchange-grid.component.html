@@ -5,7 +5,7 @@
   <div class={{getSearchedItemsClass()}}>
     <h3 class="trending-title">Results for '{{getSearchValue()}}'</h3>
     <div class="ex-item-container">
-      <div class="ex-item" *ngFor="let item of allItems">
+      <div class="ex-item" *ngFor="let item of itemSearchResults">
         <img src={{item.icon}} alt="banana" class="item-icon">
         <h6 class="item-name">{{item.name}}</h6>
         <p class="item-ex-val">${{item.value}} per lb.</p>

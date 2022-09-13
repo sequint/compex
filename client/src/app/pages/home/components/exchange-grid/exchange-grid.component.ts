@@ -18,14 +18,13 @@ export class ExchangeGridComponent implements OnInit {
   private searchValue: string = '';
   
   trendingItems: any = [];
-  allItems: any = [];
+  itemSearchResults: CompxItem[] = [];
 
   constructor(public crudService: CrudService) {}
 
   //** Private functions that intiate all item arrays from on init **//
 
   private addArrowClassesToItems(trendingItems: any) {
-    console.log('in');
     return trendingItems.map((item: any) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
@@ -44,18 +43,15 @@ export class ExchangeGridComponent implements OnInit {
     });
   }
 
-  // Get all items then assign items to arrays to be worked with
-  private getAndAssignItems() {
+  private getTrendingItems() {
     this.crudService.getAllItems().subscribe((res: {}) => {
-      this.trendingItems = res;
-      this.trendingItems = this.addArrowClassesToItems(this.trendingItems);
-      this.allItems = this.trendingItems;
+      // Add arrow classes to array res before assigning to trendingItems array
+      this.trendingItems = this.addArrowClassesToItems(res);
     });
   }
-
-  // On component intialization, get all trending items and assign to local arrays
+  
   ngOnInit() {
-    this.getAndAssignItems();
+    this.getTrendingItems();
   }
 
   //** Public functions for user interaction **//
@@ -74,7 +70,7 @@ export class ExchangeGridComponent implements OnInit {
       this.searchedItemsClass = '';
       this.trendingItemsClass = 'hide';
 
-      this.allItems = this.trendingItems.filter((item: any) => {
+      this.itemSearchResults = this.trendingItems.filter((item: any) => {
         return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
       });
 
