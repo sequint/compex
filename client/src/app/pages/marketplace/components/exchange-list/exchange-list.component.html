@@ -4,9 +4,9 @@
 
   <search-bar (searchValueEvent)="searchForItems($event)"></search-bar>
 
-  <div class={{getSearchedItemsClass()}}>
+  <div class={{searchedItemsClass}}>
     <div class="ex-item-container">
-      <div class="ex-item" *ngFor="let item of allItems">
+      <div class="ex-item" *ngFor="let item of itemSearchResults">
         <img src={{item.icon}} alt="banana" class="compx-item item-icon">
         <h6 class="compx-item item-name">{{item.name}}</h6>
         <p class="compx-item item-ex-val">${{item.value}} per lb.</p>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class={{getTrendingItemsClass()}}>
+  <div class={{trendingItemsClass}}>
     <div class="ex-item-container">
       <div class="ex-item" *ngFor="let item of trendingItems">
         <img src={{item.icon}} alt="banana" class="compx-item item-icon">

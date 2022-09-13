@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CrudService } from 'src/app/shared/services/crud.service';
 import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
-import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
 
 /**
  * @title ExchangeList
@@ -12,33 +12,24 @@ import { fakeCompxItems } from 'src/db/fakeCompxItemsDb';
   }
 )
 
-export class ExchangeListComponent {
-  private searchedItemsClass: string;
-  private trendingItemsClass: string;
-  private searchValue: string;
-  private tempItemsArray: CompxItem[];
-  
-  allItems: CompxItem[];
-  trendingItems: CompxItem[];
+export class ExchangeListComponent implements OnInit {
+  trendingItems: CompxItem[] = [];
+  itemSearchResults: CompxItem[] = [];
+  searchedItemsClass: string = 'hide';
+  trendingItemsClass: string = '';
+  searchValue: string = '';
 
-  constructor() {
-    this.searchedItemsClass = 'hide';
-    this.trendingItemsClass = '';
-    this.searchValue = '';
-    this.allItems = this.mapItems();
-    this.trendingItems = this.mapItems();
-    this.tempItemsArray = this.allItems;
-  }
+  constructor(public crudService: CrudService) {}
 
-  private mapItems = () => {
-    return fakeCompxItems.map(item => {
+  private addArrowClassesToItems(trendingItems: any) {
+    return trendingItems.map((item: CompxItem) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
-        item.changeColorClass += ' compx-item positive-change';
+        item.changeColorClass += ' positive-change';
       }
       else if (item.valChange < 0) {
         item.upArrowClass = 'hide';
-        item.changeColorClass += ' compx-item negative-change';
+        item.changeColorClass += ' negative-change';
       }
       else {
         item.upArrowClass = 'hide';
@@ -49,32 +40,35 @@ export class ExchangeListComponent {
     });
   }
 
-  getSearchedItemsClass = () => this.searchedItemsClass;
-  getTrendingItemsClass = () => this.trendingItemsClass;
-  getSearchValue = () => this.searchValue;
+  private getTrendingItems() {
+    this.crudService.getAllItems().subscribe((res: {}) => {
+      // Add arrow classes to array res before assigning to trendingItems array
+      this.trendingItems = this.addArrowClassesToItems(res);
+    });
+  }
 
-  setItemSearchValue = (searchValue: string) => this.searchValue = searchValue;
+  // On component load get trending items from the server
+  ngOnInit() {
+    this.getTrendingItems();
+  }
 
-  searchForItems = (searchValue: string) => {
-
+  searchForItems(searchValue: string) {
+    // Assign input value to searchValue
     this.searchValue = searchValue;
 
-    let lowerSearchValue = this.searchValue.toLowerCase();
+    // Filter trending items into search results by comparing search val to item name
+    this.itemSearchResults = this.trendingItems.filter((item: any) => {
+      return item.name.toLowerCase().slice(0, searchValue.length) === searchValue.toLowerCase();
+    });
 
-    if (lowerSearchValue.length > 0) {
+    // Change grid visibility based on whether there is a search input or not
+    if (searchValue.length > 0) {
       this.searchedItemsClass = '';
       this.trendingItemsClass = 'hide';
-
-      this.allItems = this.tempItemsArray.filter(item => {
-        return item.name.toLowerCase().slice(0, lowerSearchValue.length) === lowerSearchValue;
-      });
-
     }
     else {
       this.searchedItemsClass = 'hide';
       this.trendingItemsClass = '';
     }
-
   }
-  
 }
