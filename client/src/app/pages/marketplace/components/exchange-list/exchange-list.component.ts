@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { CrudService } from 'src/app/shared/services/crud.service';
 import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 
@@ -13,15 +13,23 @@ import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 )
 
 export class ExchangeListComponent implements OnInit {
+  allItems: CompxItem[] = [];
   trendingItems: CompxItem[] = [];
   itemSearchResults: CompxItem[] = [];
   searchedItemsClass: string = 'hide';
   trendingItemsClass: string = '';
   searchValue: string = '';
 
-  @Input() focusedTab = '';
+  @Input() focusedTab: string = '';
 
   constructor(public crudService: CrudService) {}
+
+  private sortTypeByCurrentTab(currentTab: string) {
+    // Filter items with a type value equal to the focusedTab
+    this.trendingItems = this.allItems.filter((item: CompxItem) => {
+      return item.type === currentTab;
+    });
+  }
 
   private addArrowClassesToItems(trendingItems: any) {
     return trendingItems.map((item: CompxItem) => {
@@ -42,16 +50,25 @@ export class ExchangeListComponent implements OnInit {
     });
   }
 
-  private getTrendingItems() {
+  private getAllItems() {
     this.crudService.getAllItems().subscribe((res: {}) => {
       // Add arrow classes to array res before assigning to trendingItems array
-      this.trendingItems = this.addArrowClassesToItems(res);
+      this.allItems = this.addArrowClassesToItems(res);
+
+      // Sort the list based on the focused tab
+      this.sortTypeByCurrentTab(this.focusedTab);
     });
   }
 
   // On component load get trending items from the server
   ngOnInit() {
-    this.getTrendingItems();
+    this.getAllItems();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const newTabValue: string = changes['focusedTab'].currentValue;
+
+    this.sortTypeByCurrentTab(newTabValue);
   }
 
   searchForItems(searchValue: string) {
