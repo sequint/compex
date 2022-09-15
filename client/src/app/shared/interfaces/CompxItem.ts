@@ -1,4 +1,5 @@
 export interface CompxItem {
+    _id: string,
     name: string,
     icon: string,
     value: number,
