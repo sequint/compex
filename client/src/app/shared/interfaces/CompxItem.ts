@@ -6,5 +6,6 @@ export interface CompxItem {
     valChange: number,
     upArrowClass: string,
     downArrowClass: string,
-    changeColorClass: string
+    changeColorClass: string,
+    type: string
 }
