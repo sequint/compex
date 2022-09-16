@@ -82,6 +82,8 @@ export class ExchangeListComponent {
     this.getAllItems();
   }
 
+  //** PUBLIC METHODS **//
+
   ngOnChanges(changes: SimpleChanges) {
     const newTabValue: string = changes['focusedTab'].currentValue;
     this.sortTypeByCurrentTab(newTabValue);
