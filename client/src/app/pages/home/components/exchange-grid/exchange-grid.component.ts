@@ -21,6 +21,8 @@ export class ExchangeGridComponent implements OnInit {
 
   constructor(public crudService: CrudService) {}
 
+  //** PRIVATE METHODS **//
+
   private sortTopFourItems(items: CompxItem[]) {
     return items.sort((a, b) => (a.tradeVolumeRank > b.tradeVolumeRank) ? 1 : -1);
   }
@@ -61,6 +63,8 @@ export class ExchangeGridComponent implements OnInit {
       console.log(this.trendingItems);
     });
   }
+
+  //** PUBLIC METHODS **//
 
   // On component load get trending items from the server
   ngOnInit() {
