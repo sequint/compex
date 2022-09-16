@@ -2,7 +2,7 @@
 
   <h3 class="list-page-title">Find {{focusedTab}} Items</h3>
 
-  <search-bar (searchValueEvent)="searchForItems($event)"></search-bar>
+  <search-bar (searchValueEvent)="onInputChange($event)"></search-bar>
 
   <div class={{searchedItemsClass}}>
     <div class="ex-item-container">

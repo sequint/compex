@@ -24,6 +24,23 @@ export class ExchangeListComponent implements OnInit {
 
   constructor(public crudService: CrudService) {}
 
+  private searchForItems() {
+    // Filter trending items into search results by comparing search val to item name
+    this.itemSearchResults = this.trendingItems.filter((item: any) => {
+      return item.name.toLowerCase().slice(0, this.searchValue.length) === this.searchValue.toLowerCase();
+    });
+
+    // Change grid visibility based on whether there is a search input or not
+    if (this.searchValue.length > 0) {
+      this.searchedItemsClass = '';
+      this.trendingItemsClass = 'hide';
+    }
+    else {
+      this.searchedItemsClass = 'hide';
+      this.trendingItemsClass = '';
+    }
+  }
+
   private sortTypeByCurrentTab(currentTab: string) {
     // Filter items with a type value equal to the focusedTab
     this.trendingItems = this.allItems.filter((item: CompxItem) => {
@@ -67,27 +84,11 @@ export class ExchangeListComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     const newTabValue: string = changes['focusedTab'].currentValue;
-
     this.sortTypeByCurrentTab(newTabValue);
   }
 
-  searchForItems(searchValue: string) {
-    // Assign input value to searchValue
+  onInputChange(searchValue: string) {
     this.searchValue = searchValue;
-
-    // Filter trending items into search results by comparing search val to item name
-    this.itemSearchResults = this.trendingItems.filter((item: any) => {
-      return item.name.toLowerCase().slice(0, searchValue.length) === searchValue.toLowerCase();
-    });
-
-    // Change grid visibility based on whether there is a search input or not
-    if (searchValue.length > 0) {
-      this.searchedItemsClass = '';
-      this.trendingItemsClass = 'hide';
-    }
-    else {
-      this.searchedItemsClass = 'hide';
-      this.trendingItemsClass = '';
-    }
+    this.searchForItems();
   }
 }
