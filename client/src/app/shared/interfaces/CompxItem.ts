@@ -7,5 +7,6 @@ export interface CompxItem {
     upArrowClass: string,
     downArrowClass: string,
     changeColorClass: string,
-    type: string
+    type: string,
+    tradeVolumeRank: number
 }
