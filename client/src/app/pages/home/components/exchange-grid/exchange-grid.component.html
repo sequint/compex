@@ -1,6 +1,6 @@
 <section class="ex-grid">
 
-  <search-bar (searchValueEvent)="searchForItems($event)"></search-bar>
+  <search-bar (searchValueEvent)="onInputChange($event)"></search-bar>
 
   <div class={{searchedItemsClass}}>
     <h3 class="trending-title">Results for '{{searchValue}}'</h3>

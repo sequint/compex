@@ -21,7 +21,22 @@ export class ExchangeGridComponent implements OnInit {
 
   constructor(public crudService: CrudService) {}
 
-  //** PRIVATE METHODS **//
+  private searchForItems() {
+    // Filter trending items into search results by comparing search val to item name
+    this.itemSearchResults = this.trendingItems.filter((item: any) => {
+      return item.name.toLowerCase().slice(0, this.searchValue.length) === this.searchValue.toLowerCase();
+    });
+
+    // Change grid visibility based on whether there is a search input or not
+    if (this.searchValue.length > 0) {
+      this.searchedItemsClass = '';
+      this.trendingItemsClass = 'hide';
+    }
+    else {
+      this.searchedItemsClass = 'hide';
+      this.trendingItemsClass = '';
+    }
+  }
 
   private sortTopFourItems(items: CompxItem[]) {
     return items.sort((a, b) => (a.tradeVolumeRank > b.tradeVolumeRank) ? 1 : -1);
@@ -67,27 +82,12 @@ export class ExchangeGridComponent implements OnInit {
   //** PUBLIC METHODS **//
 
   // On component load get trending items from the server
-  public ngOnInit() {
+  ngOnInit() {
     this.getTrendingItems();
   }
 
-  public searchForItems(searchValue: string) {
-    // Assign input value to searchValue
+  onInputChange(searchValue: string) {
     this.searchValue = searchValue;
-
-    // Filter trending items into search results by comparing search val to item name
-    this.itemSearchResults = this.trendingItems.filter((item: any) => {
-      return item.name.toLowerCase().slice(0, searchValue.length) === searchValue.toLowerCase();
-    });
-
-    // Change grid visibility based on whether there is a search input or not
-    if (searchValue.length > 0) {
-      this.searchedItemsClass = '';
-      this.trendingItemsClass = 'hide';
-    }
-    else {
-      this.searchedItemsClass = 'hide';
-      this.trendingItemsClass = '';
-    }
+    this.searchForItems();
   }
 }
