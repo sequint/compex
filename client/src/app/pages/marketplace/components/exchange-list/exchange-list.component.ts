@@ -48,8 +48,8 @@ export class ExchangeListComponent {
     });
   }
 
-  private addArrowClassesToItems(trendingItems: any) {
-    return trendingItems.map((item: CompxItem) => {
+  private addArrowClassesToItems(items: any) {
+    return items.map((item: CompxItem) => {
       if (item.valChange > 0) {
         item.downArrowClass = 'hide';
         item.changeColorClass += ' positive-change';
