@@ -67,11 +67,11 @@ export class ExchangeGridComponent implements OnInit {
   //** PUBLIC METHODS **//
 
   // On component load get trending items from the server
-  ngOnInit() {
+  public ngOnInit() {
     this.getTrendingItems();
   }
 
-  searchForItems(searchValue: string) {
+  public searchForItems(searchValue: string) {
     // Assign input value to searchValue
     this.searchValue = searchValue;
 
