@@ -29,7 +29,7 @@
 
   <div class={{trendingItemsClass}}>
     <div class="ex-item-container">
-      <div class="ex-item" *ngFor="let item of trendingItems">
+      <div class="ex-item" *ngFor="let item of itemsSortedByType">
         <img src={{item.icon}} alt="banana" class="compx-item item-icon">
         <h6 class="compx-item item-name">{{item.name}}</h6>
         <p class="compx-item item-ex-val">${{item.value}} per lb.</p>
