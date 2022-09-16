@@ -12,9 +12,9 @@ import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
   }
 )
 
-export class ExchangeListComponent implements OnInit {
+export class ExchangeListComponent {
   allItems: CompxItem[] = [];
-  trendingItems: CompxItem[] = [];
+  itemsSortedByType: CompxItem[] = [];
   itemSearchResults: CompxItem[] = [];
   searchedItemsClass: string = 'hide';
   trendingItemsClass: string = '';
@@ -26,7 +26,7 @@ export class ExchangeListComponent implements OnInit {
 
   private searchForItems() {
     // Filter trending items into search results by comparing search val to item name
-    this.itemSearchResults = this.trendingItems.filter((item: any) => {
+    this.itemSearchResults = this.itemsSortedByType.filter((item: any) => {
       return item.name.toLowerCase().slice(0, this.searchValue.length) === this.searchValue.toLowerCase();
     });
 
@@ -43,7 +43,7 @@ export class ExchangeListComponent implements OnInit {
 
   private sortTypeByCurrentTab(currentTab: string) {
     // Filter items with a type value equal to the focusedTab
-    this.trendingItems = this.allItems.filter((item: CompxItem) => {
+    this.itemsSortedByType = this.allItems.filter((item: CompxItem) => {
       return item.type === currentTab;
     });
   }
