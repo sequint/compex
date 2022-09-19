@@ -44,3 +44,9 @@
 .unfocused-tab:hover {
   background-color: #b0b2b8;
 }
+
+@media screen and (min-width: 1400px) {
+  .tabs-container {
+    margin: 0px 400px;
+  }
+}
