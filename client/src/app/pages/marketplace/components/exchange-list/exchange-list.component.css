@@ -76,3 +76,9 @@
 .negative-change {
   color: red;
 }
+
+@media screen and (min-width: 1400px) {
+  .ex-item-container {
+    margin: 0px 400px;
+  }
+}
