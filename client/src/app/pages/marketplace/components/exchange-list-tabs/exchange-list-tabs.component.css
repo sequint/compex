@@ -24,11 +24,23 @@
   border-top-right-radius: 10px;
 }
 
+.tab-item:hover {
+  cursor: pointer;
+}
+
 .focused-tab {
   background-color: #4F5D2F;
   color: white;
 }
 
+.focused-tab:hover {
+  background-color: #4f5d2fa6;
+}
+
 .unfocused-tab {
   background-color: #b0b2b89c;
+}
+
+.unfocused-tab:hover {
+  background-color: #b0b2b8;
 }
