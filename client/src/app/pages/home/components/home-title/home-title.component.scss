@@ -1,7 +1,5 @@
 @use '../../../../shared/scss/base';
 
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap');
-
 .title-container {
   background-color: base.$compx-bg-color;
   height: 225px;
@@ -10,7 +8,7 @@
 }
 
 .large-logo {
-  font-family: 'DynaPuff', cursive;
+  font-family: base.$logo-font;
   font-size: 150px;
   margin: 0px;
   color: #4F5D2F;
