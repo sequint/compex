@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 /**
- * @title Compost
+ * @title Inventory
  */
 @Component({
-    selector: 'compost',
-    templateUrl: './compost.component.html',
+    selector: 'inventory',
+    templateUrl: './inventory.component.html',
   }
 )
 
