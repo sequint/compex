@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@use '../../../../shared/scss/base';
+
 @import url('https://css.gg/arrow-up.css');
 @import url('https://css.gg/arrow-down.css');
 
@@ -12,7 +13,7 @@
   margin-top: 0px;
   margin-bottom: 20px;
   padding-top: 30px;
-  font-family: 'Signika Negative', sans-serif;
+  font-family: base.$text-font;
   font-size: 30px;
   color: #423629;
 }
@@ -43,7 +44,7 @@
 }
 
 .item-name {
-  font-family: 'Signika Negative', sans-serif;
+  font-family: base.$text-font;
   font-size: 15px;
 }
 

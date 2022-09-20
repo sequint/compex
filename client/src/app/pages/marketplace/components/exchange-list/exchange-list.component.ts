@@ -8,7 +8,7 @@ import { CompxItem } from 'src/app/shared/interfaces/CompxItem';
 @Component({
     selector: 'exchange-list',
     templateUrl: './exchange-list.component.html',
-    styleUrls: ['./exchange-list.component.css'],
+    styleUrls: ['./exchange-list.component.scss'],
   }
 )
 

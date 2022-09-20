@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600&display=swap');
+@use '../../../../shared/scss/base';
 
 .tabs-holder {
   background-color: #CFD6EA;
@@ -18,7 +18,7 @@
   display: inline;
   padding: 20px;
   margin: 5px;
-  font-family: 'Signika Negative', sans-serif;
+  font-family: base.$text-font;
   font-size: 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;

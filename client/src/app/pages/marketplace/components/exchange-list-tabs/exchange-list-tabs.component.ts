@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output } from "@angular/core";
 @Component({
     selector: 'exchange-list-tabs',
     templateUrl: './exchange-list-tabs.component.html',
-    styleUrls: ['./exchange-list-tabs.component.css'],
+    styleUrls: ['./exchange-list-tabs.component.scss'],
   }
 )
 
