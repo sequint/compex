@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomePage } from './pages/home/home.component';
 import { MarketplacePage } from './pages/marketplace/marketplace.component';
 import { CompostPage } from './pages/compost/compost.component';
+import { InventoryPage } from './pages/inventory/inventory.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CompostPage } from './pages/compost/compost.component';
     AppComponent,
     HomePage,
     MarketplacePage,
+    InventoryPage,
     CompostPage
   ],
   imports: [
@@ -32,7 +34,8 @@ import { CompostPage } from './pages/compost/compost.component';
     RouterModule.forRoot([
       { path: '', component: HomePage },
       { path: 'marketplace', component: MarketplacePage },
-      { path: 'compost', component: CompostPage }
+      { path: 'compost', component: CompostPage },
+      { path: 'inventory', component: InventoryPage }
     ])
   ],
   exports: [
