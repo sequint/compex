@@ -7,7 +7,9 @@ const Item = new Schema({
   valChange: Number,
   upArrowClass: String,
   downArrowClass: String,
-  changeColorClass: String
+  changeColorClass: String,
+  type: String,
+  tradeVolumeRank: Number
 });
 
 module.exports = model('Item', Item);
