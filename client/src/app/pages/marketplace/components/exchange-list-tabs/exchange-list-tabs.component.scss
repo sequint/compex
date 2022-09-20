@@ -1,7 +1,7 @@
 @use '../../../../shared/scss/base';
 
 .tabs-holder {
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
 }
 
 .tabs-container {
@@ -9,7 +9,7 @@
   padding: 25px 0px 0px 0px;
   margin: 0px 10px;
   height: 45px;
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
   border-bottom: black solid 3px;
 }
 

@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'compost-divider',
     templateUrl: './compost-divider.component.html',
-    styleUrls: ['./compost-divider.component.css'],
+    styleUrls: ['./compost-divider.component.scss'],
   }
 )
 
-export class CompostDividerComponent {}
+export class CompostDividerComponent { }

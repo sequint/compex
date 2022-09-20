@@ -1,5 +1,7 @@
+@use '../../../../shared/scss/base';
+
 .compost-pile-divider {
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
   margin-top: -40px;
 }
 

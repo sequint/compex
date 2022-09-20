@@ -51,7 +51,7 @@ li {
 .side-nav-container {
   display: flex;
   height: 65px;
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
   top: 0;
   position: sticky;
 }
@@ -100,7 +100,7 @@ li {
   margin-bottom: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
 }
 
 .top-nav-menu-item {

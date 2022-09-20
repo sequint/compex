@@ -1,7 +1,9 @@
+@use '../../../../shared/scss/base';
+
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap');
 
 .title-container {
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
   height: 225px;
   text-align: center;
   padding-top: 10px;

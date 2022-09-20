@@ -1,6 +1,8 @@
+@use '../../scss/base';
+
 .search-bar-container {
   text-align: center;
-  background-color: #CFD6EA;
+  background-color: base.$compx-bg-color;
   padding-bottom: 25px;
 }
 
