@@ -11,13 +11,15 @@ import { MarketplaceModule } from './pages/marketplace/marketplace.module';
 import { AppComponent } from './app.component';
 import { HomePage } from './pages/home/home.component';
 import { MarketplacePage } from './pages/marketplace/marketplace.component';
+import { CompostPage } from './pages/compost/compost.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePage,
-    MarketplacePage
+    MarketplacePage,
+    CompostPage
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { MarketplacePage } from './pages/marketplace/marketplace.component';
     RouterModule.forRoot([
       { path: '', component: HomePage },
       { path: 'marketplace', component: MarketplacePage },
+      { path: 'compost', component: CompostPage }
     ])
   ],
   exports: [
