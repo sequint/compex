@@ -34,6 +34,10 @@ export class NavBarComponent {
       {
         title: 'inventory',
         route: '/inventory'
+      },
+      {
+        title: 'compost',
+        route: '/compost'
       }
     ];
 
