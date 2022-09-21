@@ -10,7 +10,7 @@ import { Component, EventEmitter, Output } from "@angular/core";
   }
 )
 
-export class ExchangeListTabs {
+export class ExchangeListTabsComponent {
   greenItemFocusClass: string = 'focused-tab';
   brownItemFocusClass: string = 'unfocused-tab';
 
@@ -23,7 +23,7 @@ export class ExchangeListTabs {
   focusGreenItems() {
     this.emitCurrentFocusedTab('Green');
     this.greenItemFocusClass = 'focused-tab';
-    this. brownItemFocusClass = 'unfocused-tab';
+    this.brownItemFocusClass = 'unfocused-tab';
   }
   
   focusBrownItems() {
