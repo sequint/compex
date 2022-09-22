@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './pages/home/home.module';
 import { MarketplaceModule } from './pages/marketplace/marketplace.module';
+import { InventoryModule } from './pages/inventory/inventory.module';
 
 import { AppComponent } from './app.component';
 import { HomePage } from './pages/home/home.component';
@@ -31,6 +32,7 @@ import { InventoryPage } from './pages/inventory/inventory.component';
     SharedModule,
     HomeModule,
     MarketplaceModule,
+    InventoryModule,
     RouterModule.forRoot([
       { path: '', component: HomePage },
       { path: 'marketplace', component: MarketplacePage },
