@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-inventory-item',
+  selector: 'inventory-item',
   templateUrl: './inventory-item.component.html',
   styleUrls: ['./inventory-item.component.css']
 })
