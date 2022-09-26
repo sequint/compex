@@ -14,6 +14,7 @@ import { HomePage } from './pages/home/home.component';
 import { MarketplacePage } from './pages/marketplace/marketplace.component';
 import { CompostPage } from './pages/compost/compost.component';
 import { InventoryPage } from './pages/inventory/inventory.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { InventoryPage } from './pages/inventory/inventory.component';
     HomePage,
     MarketplacePage,
     InventoryPage,
-    CompostPage
+    CompostPage,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
