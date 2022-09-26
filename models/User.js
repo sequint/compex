@@ -9,7 +9,11 @@ const User = new Schema({
     match: /.+\@.+\..+/,
     unique: true
   },
-  userType: String
+  userType: String,
+  inventory: [{
+    type: Schema.Types.ObjectId,
+    ref: 'InevtoryItem'
+  }]
 });
 
 User.plugin(require('passport-local-mongoose'));
