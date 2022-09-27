@@ -36,8 +36,7 @@ import { LandingComponent } from './pages/landing/landing.component';
     MarketplaceModule,
     InventoryModule,
     RouterModule.forRoot([
-      { path: '', component: LandingComponent },
-      { path: 'home', component: HomePage },
+      { path: '', component: HomePage },
       { path: 'marketplace', component: MarketplacePage },
       { path: 'compost', component: CompostPage },
       { path: 'inventory', component: InventoryPage }
