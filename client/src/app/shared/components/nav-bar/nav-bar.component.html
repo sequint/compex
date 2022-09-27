@@ -1,5 +1,6 @@
 <!-- Mobile View -->
 <div class="side-nav-container">
+  <log-in-button></log-in-button>
   <div class={{getMenuContainerClass()}}>
     <div class={{getMenuClass()}}>
       <i class="gg-close-o" (click)="toggleMenuOpen()"></i>
@@ -16,6 +17,7 @@
 
 <!-- Desktop View -->
 <div class="top-nav-container">
+  <log-in-button></log-in-button>
   <ul class="top-nav-menu-item-container">
     <li class="top-nav-menu-item" *ngFor="let item of menuItems" [routerLink]="[item.route]">{{item.title}}</li>
   </ul>
