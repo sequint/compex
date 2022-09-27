@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { LogInButtonComponent } from './components/log-in-button/log-in-button.component';
 
 
 @NgModule({
   declarations: [
     NavBarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LogInButtonComponent
   ],
   imports: [
     CommonModule,
