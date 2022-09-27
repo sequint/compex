@@ -14,6 +14,14 @@ li {
   font-family: base.$text-font;
 }
 
+.login-btn-placement-mobile {
+  margin: 10px;
+}
+
+.login-btn-placement-dsktop {
+  margin: 10px 20px;
+}
+
 .show-menu-container {
   visibility: visible !important;
   opacity: 1 !important;
@@ -90,13 +98,16 @@ li {
 }
 
 .top-nav-container {
+  display: flex;
   top: 0;
   position: sticky;
 }
 
 .top-nav-menu-item-container {
+  position: relative;
+  margin: 0px auto;
+  right: 75px;
   text-align: center;
-  margin-bottom: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
