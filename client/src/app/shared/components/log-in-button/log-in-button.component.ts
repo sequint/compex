@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './log-in-button.component.html',
   styleUrls: ['./log-in-button.component.scss']
 })
+
 export class LogInButtonComponent implements OnInit {
 
   constructor() { }

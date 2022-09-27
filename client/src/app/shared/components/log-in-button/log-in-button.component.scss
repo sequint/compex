@@ -8,3 +8,10 @@
   padding: 10px;
   border-radius: 30px;
 }
+
+.log-in-btn-container:hover {
+  background-color: transparent;
+  color: black;
+  border: solid black 3px;
+  cursor: pointer;
+}
